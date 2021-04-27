@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import ReactDOM from 'react-dom'
 import BasicInformation from './components/BasicInformation'
-
+import BasicInformationDisplay from './components/basic/BasicInformationDisplay'
 
 class App extends Component {
   constructor() {
@@ -55,7 +55,9 @@ class App extends Component {
       )
     } else {
       return (
-        console.log()
+        <div>
+          <BasicInformationDisplay />
+        </div>
       )
     }
   }
