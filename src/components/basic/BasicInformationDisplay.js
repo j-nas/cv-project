@@ -7,10 +7,10 @@ class BasicInformationDisplay extends React.Component{
         <h1>{this.props.name}</h1>
         <p>
           <a href={"mailto:" + this.props.email}>
-            {this.props.email}
-          </a>
+            {this.props.email}</a><br />
+        
+          {this.props.phone}
         </p>
-        <p>{this.props.phone}</p>
       </div>
     )
   }

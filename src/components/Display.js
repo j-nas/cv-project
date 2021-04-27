@@ -2,6 +2,8 @@ import React from "react"
 import BasicInformationDisplay from "./basic/BasicInformationDisplay"
 class Display extends React.Component{
   render(){
+    
+    
     return(
       <div>
         <BasicInformationDisplay 

@@ -5,10 +5,11 @@ class PhoneInput extends Component {
     return (
       <div>
         <form>
-          <label htmlFor="phoneInput">Phone:</label>
+          <label htmlFor="phoneInput">Phone: </label>
           <input
             type="text"
-            id="emailInput"
+            id="phoneInput"
+            data-field="phone"
             onChange={this.props.event}
             value={this.props.phone}
           />

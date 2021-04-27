@@ -1,37 +1,42 @@
 import React, { Component } from 'react'
-// import ReactDOM from 'react-dom'
 import BasicInformation from './components/BasicInformation'
 import BasicInformationDisplay from './components/basic/BasicInformationDisplay'
-
+import ToggleEditButton from './components/ToggleEditButton'
+import ResetButton from './components/ResetButton'
+import PrintButton from './components/PrintButton'
 class App extends Component {
   constructor() {
     super()
     this.state = {
       editMode: true,
-      fullName: "",
-      email: "",
-      phone: "",
+      fullName: "Your name here",
+      email: "placeholder@email.com",
+      phone: "1234567890",
+      schoolName: "School name here",
+      qualification: "Qualification here",
+      yearsAttending: [2021, 2021],
+      employerName: "Employer name here",
+      yearsWorked: [2021, 2021],
+      relevantSkills: ["relavant skill here"]
     }
-    this.handleChangeName = this.handleChangeName.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePhone = this.handleChangePhone.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this)
+    this.resetButton = this.resetButton.bind(this)
   }
-  handleChangeName(e) {
-    this.setState({ fullName: e.target.value });
-  }
-  handleChangeEmail(e) {
-    this.setState({ email: e.target.value });
-  }
-  handleChangePhone(e) {
-    this.setState({ phone: e.target.value });
+  handleChange(e) {
+    const value = e.target.value
+    this.setState({
+      ...this.state,
+      [e.target.dataset.field]: value
+    })
     console.log(this.state)
   }
   resetButton(){
     this.setState({
       editMode: true,
-      fullName: "",
-      email: "",
-      phone: "",
+      fullName: "Your name here",
+      email: "placeholder@email.com",
+      phone: "1234567890",
     })
   }
   toggleEdit(){
@@ -39,27 +44,40 @@ class App extends Component {
       editMode: !this.state.editMode
     })
   }
+
   render(){
-    if(this.state.editMode) {   
-      return (
-        <div>  
-          <BasicInformation 
+    const inputMode = 
+      <div>
+        <BasicInformation 
             name={this.state.fullName}
-            nameEvent={this.handleChangeName}
             email={this.state.email}
-            emailEvent={this.handleChangeEmail}
             phone={this.state.phone}
-            phoneEvent={this.handleChangePhone}
+            event={this.handleChange}
             editMode={this.state.editMode}/>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <BasicInformationDisplay />
-        </div>
-      )
-    }
+      </div>
+    const displayMode = 
+      <div>
+         <BasicInformationDisplay 
+          name={this.state.fullName}
+          email={this.state.email}
+          phone={this.state.phone}/>
+          <PrintButton />
+      </div>
+    
+    
+    
+    
+    return (
+      <div>  
+        {this.state.editMode?inputMode:displayMode}
+        <ToggleEditButton toggle={this.toggleEdit}/>
+        <ResetButton resetButton={this.resetButton}/>
+        
+      </div>
+    )
+   
+     
+    
   }
 }
 

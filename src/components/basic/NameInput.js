@@ -4,11 +4,12 @@ class NameInput extends Component {
   render() {
     return (
       <div>
-        <form>
-          <label htmlFor="nameInput">Name:</label>
+        <form action="#">
+          <label htmlFor="nameInput">Name: </label>
           <input
             type="text"
             id="nameInput"
+            data-field="fullName"
             onChange={this.props.event}
             value={this.props.fullName}
           />

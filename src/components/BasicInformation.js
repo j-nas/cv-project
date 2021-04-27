@@ -8,16 +8,17 @@ class BasicInformation extends Component {
   render() {
     return (
       <div>
-        <h1>Basic Information</h1>
+        <h3>Basic Information</h3>
         <NameInput
           fullName={this.props.name}
-          event={this.props.nameEvent} />
+          event={this.props.event} />
         <EmailInput 
           email={this.props.email} 
-          event={this.props.emailEvent} />
+          event={this.props.event} />
         <PhoneInput 
           phone={this.props.phone} 
-          event={this.props.phoneEvent} />
+          event={this.props.event} />
+        <hr />
       </div>
     );
   }

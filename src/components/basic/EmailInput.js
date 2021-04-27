@@ -4,15 +4,16 @@ class EmailInput extends Component {
   render() {
     return (
       <div>
-        <form>
-          <label htmlFor="emailInput">Email:</label>
+        <div>
+          <label htmlFor="emailInput">Email: </label>
           <input
             type="email"
             id="emailInput"
+            data-field="email"
             onChange={this.props.event}
             value={this.props.email}
           />
-        </form>
+        </div>
       </div>
     );
   }
