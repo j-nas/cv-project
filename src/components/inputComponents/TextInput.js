@@ -1,19 +1,19 @@
 import React from "react"
 
-class SchoolNameInput extends React.Component{
+class TextInput extends React.Component{
   render(){
     return(
       <div>
         <form action="#">
-          <label >School Name: </label>
+          <label >{this.props.inputTitle} </label>
           <input 
             type="text"
-            data-field="schoolName"
+            data-field={this.props.dataset}
             onChange={this.props.event}
-            value={this.props.schoolName}/>
+            value={this.props.input}/>
         </form>
       </div>
     )
   }
 }
-export default SchoolNameInput
+export default TextInput

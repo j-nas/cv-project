@@ -19,6 +19,7 @@ class App extends Component {
       yearSchoolStart: "Start date",
       yearSchoolComplete: "Finish Date",
       employerName: "Employer name here",
+      jobTitle: "Job title here",
       yearWorkStart: "",
       yearWorkComplete: "",
       relevantSkills: ["relavant skill here"]
