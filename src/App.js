@@ -5,6 +5,7 @@ import ToggleEditButton from './components/ToggleEditButton'
 import ResetButton from './components/ResetButton'
 import PrintButton from './components/PrintButton'
 import Education from './components/Education'
+import Experience from './components/Experience'
 class App extends Component {
   constructor() {
     super()
@@ -47,7 +48,7 @@ class App extends Component {
       employerName: "Employer name here",
       yearWorkStart: "",
       yearWorkComplete: "",
-      relevantSkills: ["relavant skill here"],
+      relevantSkills: [],
     })
   }
   toggleEdit(){
@@ -55,7 +56,12 @@ class App extends Component {
       editMode: !this.state.editMode
     })
   }
-
+  newSkill(e){
+    this.setState({
+      ...this.state.relevantSkills.push(e.target.value)
+      
+    })
+  }
   render(){
     const inputMode = 
       <div>
@@ -65,12 +71,15 @@ class App extends Component {
         <Education 
           stateData={this.state}
           event={this.handleChange}/>
+        <Experience
+          stateData={this.state}
+          event={this.handleChange} />
       </div>
     const displayMode = 
       <div>
-         <Display 
+        <Display 
           stateData={this.state}/>
-          <PrintButton />
+        <PrintButton />
       </div>
     
     

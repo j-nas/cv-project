@@ -10,7 +10,7 @@ class QualificationInput extends React.Component{
             type="text"
             data-field="qualification"
             onChange={this.props.event}
-            value={this.props.schoolName}/>
+            value={this.props.qualification}/>
         </form>
       </div>
     )
