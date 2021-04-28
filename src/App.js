@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import BasicInformation from './components/BasicInformation'
-import BasicInformationDisplay from './components/basic/BasicInformationDisplay'
+import Display from './components/Display'
 import ToggleEditButton from './components/ToggleEditButton'
 import ResetButton from './components/ResetButton'
 import PrintButton from './components/PrintButton'
+import Education from './components/Education'
 class App extends Component {
   constructor() {
     super()
@@ -14,9 +15,11 @@ class App extends Component {
       phone: "1234567890",
       schoolName: "School name here",
       qualification: "Qualification here",
-      yearsAttending: [2021, 2021],
+      yearSchoolStart: "Start date",
+      yearSchoolComplete: "Finish Date",
       employerName: "Employer name here",
-      yearsWorked: [2021, 2021],
+      yearWorkStart: "",
+      yearWorkComplete: "",
       relevantSkills: ["relavant skill here"]
     }
     this.handleChange = this.handleChange.bind(this);
@@ -37,6 +40,14 @@ class App extends Component {
       fullName: "Your name here",
       email: "placeholder@email.com",
       phone: "1234567890",
+      schoolName: "School name here",
+      qualification: "Qualification here",
+      yearSchoolStart: "Start date",
+      yearSchoolComplete: "Finish Date",
+      employerName: "Employer name here",
+      yearWorkStart: "",
+      yearWorkComplete: "",
+      relevantSkills: ["relavant skill here"],
     })
   }
   toggleEdit(){
@@ -49,18 +60,16 @@ class App extends Component {
     const inputMode = 
       <div>
         <BasicInformation 
-            name={this.state.fullName}
-            email={this.state.email}
-            phone={this.state.phone}
-            event={this.handleChange}
-            editMode={this.state.editMode}/>
+          stateData={this.state}
+          event={this.handleChange}/>
+        <Education 
+          stateData={this.state}
+          event={this.handleChange}/>
       </div>
     const displayMode = 
       <div>
-         <BasicInformationDisplay 
-          name={this.state.fullName}
-          email={this.state.email}
-          phone={this.state.phone}/>
+         <Display 
+          stateData={this.state}/>
           <PrintButton />
       </div>
     

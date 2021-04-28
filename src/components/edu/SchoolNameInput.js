@@ -5,12 +5,12 @@ class SchoolNameInput extends React.Component{
     return(
       <div>
         <form action="#">
-          <label >School Name:</label>
+          <label >School Name: </label>
           <input 
             type="text"
             data-field="schoolName"
             onChange={this.props.event}
-            value={this.props.fullName}/>
+            value={this.props.schoolName}/>
         </form>
       </div>
     )

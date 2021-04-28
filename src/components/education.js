@@ -9,9 +9,16 @@ class Education extends React.Component{
   render() {
     return(
       <div>
-        <SchoolNameInput />
-        <QualificationInput />
-        <YearsAttendingInput />
+        <SchoolNameInput 
+          event={this.props.event}
+          schoolName={this.props.stateData.schoolName} />
+        
+        <QualificationInput 
+          event={this.props.event} 
+          qualification={this.props.stateData.qualification}/>
+        <YearsAttendingInput 
+          event={this.props.event} />
+        <hr/>
       </div>
     )
   }
