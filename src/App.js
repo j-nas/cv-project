@@ -14,8 +14,8 @@ class App extends Component {
     super()
     this.state = {
       editMode: true,
-      schoolInputs: [],
-      workInputs: [],
+      schoolInputs: [{key: uniqid()}],
+      workInputs: [{key: uniqid()}],
      }
     this.toggleEdit = this.toggleEdit.bind(this)
   }

@@ -8,6 +8,7 @@ class TextInput extends React.Component{
           <label >{this.props.inputTitle} </label>
           <input 
             type="text"
+            placeholder={this.props.placeHolder}
             data-field={this.props.dataset}
             onChange={this.props.event}
             value={this.props.input}/>

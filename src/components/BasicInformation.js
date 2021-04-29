@@ -6,9 +6,9 @@ class BasicInformation extends Component {
   constructor(){
     super()
     this.state = {
-      fullName: "Your name here",
-      email: "placeholder@email.com",
-      phone: "1234567890",
+      fullName: "",
+      email: "",
+      phone: "",
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,9 +22,9 @@ class BasicInformation extends Component {
   }
   resetButton(){
     this.setState({
-      fullName: "Your name here",
-      email: "placeholder@email.com",
-      phone: "1234567890",
+      fullName: "",
+      email: "",
+      phone: "",
     })
   }
   render() {
@@ -35,7 +35,8 @@ class BasicInformation extends Component {
           inputTitle="Name: "
           dataset="fullName" 
           input={this.state.fullName}
-          event={this.handleChange} />
+          event={this.handleChange} 
+          placeHolder="Your Name"/>
         <EmailInput 
           email={this.state.email} 
           event={this.handleChange} />
@@ -43,7 +44,8 @@ class BasicInformation extends Component {
           inputTitle="Phone:"
           dataset="phone"
           input={this.state.phone} 
-          event={this.handleChange} />
+          event={this.handleChange} 
+          placeHolder="(555) 555-1234"/>
       </div>
 
     const displayMode = 

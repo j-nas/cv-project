@@ -7,10 +7,10 @@ class Education extends React.Component{
   constructor(){
     super()
     this.state = {
-      schoolName: "School name here",
-      qualification: "Qualification here",
-      yearSchoolStart: "Start date",
-      yearSchoolComplete: "Finish Date",
+      schoolName: "",
+      qualification: "",
+      yearSchoolStart: "Start year",
+      yearSchoolComplete: "Graduation year",
     }
     this.handleChange = this.handleChange.bind(this);
 
@@ -23,14 +23,6 @@ class Education extends React.Component{
     })
     console.log(this.state)
   }
-  resetButton(){
-    this.setState({
-      schoolName: "School name here",
-      qualification: "Qualification here",
-      yearSchoolStart: "Start date",
-      yearSchoolComplete: "Finish Date",
-    })
-  }
   render() {
     const inputMode =
       <div>
@@ -38,12 +30,14 @@ class Education extends React.Component{
           event={this.handleChange}
           input={this.state.schoolName}
           inputTitle="Name of school:"
-          dataset="schoolName" />
+          dataset="schoolName" 
+          placeHolder="Institute name here"/>
         <TextInput 
           event={this.handleChange} 
           input={this.state.qualification}
           inputTitle="Qualification earned:"
-          dataset="qualification" />
+          dataset="qualification" 
+          placeHolder="Qualification Earned"/>
         <YearsInput 
           event={this.handleChange}
           inputTitle="Years attended:"

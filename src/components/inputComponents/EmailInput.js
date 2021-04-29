@@ -9,6 +9,7 @@ class EmailInput extends Component {
           <input
             type="email"
             id="emailInput"
+            placeholder="email@example.com"
             data-field="email"
             onChange={this.props.event}
             value={this.props.email}

@@ -42,6 +42,7 @@ class RelevantSkillsInput extends React.Component {
         <li key={item.key}>
           <input
             type="text"
+            placeholder="Enter Achievements here"
             data-field={item.key}
             onChange={this.onChangeHandler}
             value={item.text}/>

@@ -7,8 +7,8 @@ class Experience extends React.Component {
   constructor(){
     super()
     this.state = {
-      employerName: "Employer name here",
-      jobTitle: "Job title here",
+      employerName: "",
+      jobTitle: "",
       yearWorkStart: "",
       yearWorkComplete: "",
       relevantSkills: [],
@@ -24,15 +24,7 @@ class Experience extends React.Component {
     })
     console.log(this.state)
   }
-  resetButton() {
-    this.setState = {
-      employerName: "Employer name here",
-      jobTitle: "Job title here",
-      yearWorkStart: "",
-      yearWorkComplete: "",
-      relevantSkills: [],
-    }
-  }
+ 
 
   render() {
     const inputMode =
@@ -41,11 +33,13 @@ class Experience extends React.Component {
           event={this.handleChange}
           input={this.state.employerName} 
           inputTitle="Employer name"
+          placeHolder="Employer Name"
           dataset="employerName"/>
         <TextInput 
           event={this.handleChange}
           input={this.state.jobTitle} 
           inputTitle="Job title:"
+          placeHolder="Job Title"
           dataset="jobTitle"/>
         
         <YearsInput 
