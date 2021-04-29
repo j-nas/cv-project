@@ -25,7 +25,6 @@ class App extends Component {
     })
   }
   addSection= (e) => {
-    
     this.setState(prevState => ({
       [e.target.dataset.field]: 
         [...prevState[e.target.dataset.field], 

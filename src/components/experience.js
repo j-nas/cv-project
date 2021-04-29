@@ -56,7 +56,9 @@ class Experience extends React.Component {
           yearEnd={this.state.yearWorkComplete}
           yearEndDataset="yearWorkComplete"
           />
-        <ListInput />
+        <ListInput 
+          inputMode={this.props.inputMode}/>
+          
         <br/>
       </div>
     const displayMode =
@@ -68,6 +70,7 @@ class Experience extends React.Component {
             {this.state.yearWorkStart} to {this.state.yearWorkComplete} <br/>
             {this.state.relevantSkills} <br/>
         </p>
+            <ListInput inputMode={this.props.inputMode} />
       </div>
     return (
       <div>
