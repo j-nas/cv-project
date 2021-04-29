@@ -3,7 +3,6 @@ import React from "react";
 import TextInput from "./inputComponents/TextInput"
 import YearsInput from "./inputComponents/YearsInput"
 
-import ResetButton from './buttons/ResetButton'
 class Education extends React.Component{
   constructor(){
     super()
@@ -35,7 +34,6 @@ class Education extends React.Component{
   render() {
     const inputMode =
       <div>
-        <h3>Education</h3>
         <TextInput 
           event={this.handleChange}
           input={this.state.schoolName}
@@ -56,18 +54,13 @@ class Education extends React.Component{
       </div>
     const displayMode =
       <div>
-        <h4>Education</h4>
         <h3>{this.state.schoolName}</h3>
         <p>{this.state.qualification} <br/>
         {this.state.yearSchoolStart} to {this.state.yearSchoolComplete}</p>
       </div>
     return (
       <div>
-
         {this.props.inputMode?inputMode:displayMode}
-        <ResetButton
-          resetButton={this.resetButton} />
-          <hr/>
       </div>
     )
   }

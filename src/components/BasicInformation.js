@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ResetButton from "./buttons/ResetButton";
 import EmailInput from "./inputComponents/EmailInput";
 import TextInput from "./inputComponents/TextInput"
 
@@ -62,8 +61,6 @@ class BasicInformation extends Component {
       
       <div>
         {this.props.inputMode ? editMode : displayMode}
-        <ResetButton
-          resetButton={this.resetButton} />
         <hr />
       </div>
     )

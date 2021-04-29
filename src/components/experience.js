@@ -3,7 +3,6 @@ import TextInput from "./inputComponents/TextInput"
 import YearsInput from './inputComponents/YearsInput'
 import ListInput from "./inputComponents/ListInput"
 
-import ResetButton from './buttons/ResetButton'
 class Experience extends React.Component {
   constructor(){
     super()
@@ -58,6 +57,7 @@ class Experience extends React.Component {
           yearEndDataset="yearWorkComplete"
           />
         <ListInput />
+        <br/>
       </div>
     const displayMode =
       <div>
@@ -72,9 +72,6 @@ class Experience extends React.Component {
     return (
       <div>
         {this.props.inputMode?inputMode:displayMode}
-        <ResetButton 
-          resetButton = {this.resetButton} />
-        <hr/>
       </div>
     )
   }
