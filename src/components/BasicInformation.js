@@ -1,38 +1,73 @@
 import React, { Component } from "react";
+import ResetButton from "./buttons/ResetButton";
 import EmailInput from "./inputComponents/EmailInput";
 import TextInput from "./inputComponents/TextInput"
 
 class BasicInformation extends Component {
   constructor(){
     super()
-  this.state = {
-    nameInput: "Name:",
-    nameDataset: "fullName",
-    phoneInput: "Phone:",
-    phoneDataset: "phone"
+    this.state = {
+      fullName: "Your name here",
+      email: "placeholder@email.com",
+      phone: "1234567890",
+    }
+    this.handleChange = this.handleChange.bind(this);
   }
+  handleChange(e) {
+    const value = e.target.value
+    this.setState({
+      ...this.state,
+      [e.target.dataset.field]: value
+    })
+    console.log(this.state)
+  }
+  resetButton(){
+    this.setState({
+      fullName: "Your name here",
+      email: "placeholder@email.com",
+      phone: "1234567890",
+    })
   }
   render() {
-    
-    return (
+    const editMode = 
       <div>
         <h3>Basic Information</h3>
         <TextInput
-          input={this.props.stateData.fullName}
-          inputTitle={this.state.nameInput}
-          event={this.props.event}
-          dataset={this.state.nameDataset} />
+          inputTitle="Name: "
+          dataset="fullName" 
+          input={this.state.fullName}
+          event={this.handleChange} />
         <EmailInput 
-          email={this.props.stateData.email} 
-          event={this.props.event} />
+          email={this.state.email} 
+          event={this.handleChange} />
         <TextInput
-          input={this.props.stateData.phone} 
-          inputTitle={this.state.phoneInput}
-          dataset={this.state.phoneDataset}
-          event={this.props.event} />
+          inputTitle="Phone:"
+          dataset="phone"
+          input={this.state.phone} 
+          event={this.handleChange} />
+      </div>
+
+    const displayMode = 
+      <div>
+        <h1>{this.state.fullName}</h1>
+        <p>
+          <a href={"mailto:" + this.state.email}>
+            {this.state.email}
+          </a>
+          <br />
+          {this.state.phone}
+        </p>
+      </div>
+    return (
+      
+      <div>
+        {this.props.inputMode ? editMode : displayMode}
+        <ResetButton
+          resetButton={this.resetButton} />
         <hr />
       </div>
-    );
+    )
+
   }
 }
 
