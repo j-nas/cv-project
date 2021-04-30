@@ -1,18 +1,68 @@
 body {
-  margin: 2em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 @media print {
-  button{
+  .noPrint {
     display: none !important;
   }
+  button {
+    display: none;
+  }
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  /* display: grid; */
+  height: 80px;
+  color: white;
+  background-color: black;
+  padding-top: 0.5em;
+  padding-left: 0.25em;
+  width: 100%;
+  align-self: stretch;
+  position: sticky;
+}
+.title {
+  font-size: 32px;
+}
+.editButton {
+  width: 59.72px;
+}
+.content {
+  margin: 1em;
+}
+.subheader {
+  font-size: 18pt;
+  text-decoration-line: underline;
+}
+
+.name {
+  font-size: 32;
+  font-weight: bold;
+}
+
+.splitPane {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "left right";
+}
+.leftSide {
+  grid-area: left;
+}
+.rightSide {
+  grid-area: right;
+}
+.rightSideHeader {
+  text-align: right;
+  grid-area: right;
+  align-self: center;
 }

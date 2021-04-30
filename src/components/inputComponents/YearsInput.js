@@ -15,23 +15,25 @@ class YearsInput extends React.Component {
 
     return (
       <div>
-        <span>{this.props.inputTitle}</span>
+        <span></span>
         <form action="#">
-          <label>From </label>
-          <select 
-            onChange={this.props.event} 
+          <label>{this.props.inputTitle}</label>
+          <select
+            onChange={this.props.event}
             data-field={this.props.yearStartDataset}
-            value={this.props.yearStart}>
-              <option value="">Start Year</option>
-              {yearList}
+            value={this.props.yearStart}
+          >
+            <option value="">Start Year</option>
+            {yearList}
           </select>
           <label> To </label>
-          <select 
-            onChange={this.props.event} 
+          <select
+            onChange={this.props.event}
             data-field={this.props.yearEndDataset}
-            value={this.props.yearEnd}>
-              <option value="Present">Present</option>
-              {yearList}
+            value={this.props.yearEnd}
+          >
+            <option value="Present">Present</option>
+            {yearList}
           </select>
         </form>
       </div>

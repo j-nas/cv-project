@@ -1,11 +1,13 @@
-import React from "react"
+import React from "react";
 
-class ToggleEditButton extends React.Component{
+class ToggleEditButton extends React.Component {
   render() {
-    return(
-      <button onClick={this.props.toggle}>Toggle Edit</button>
-    )
+    return (
+      <button className="editButton" onClick={this.props.toggleEdit}>
+        {this.props.inputMode ? "Display" : "  Edit  "}
+      </button>
+    );
   }
 }
 
-export default ToggleEditButton
+export default ToggleEditButton;
