@@ -25,3 +25,5 @@ yarn-error.log*
 .vscode
 todolist.txt
 documentTree.txt
+src/components/Experience new.js
+src/App copy.js

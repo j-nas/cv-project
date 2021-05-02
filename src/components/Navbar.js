@@ -3,12 +3,12 @@ import React from "react";
 import ResetButton from "./buttons/ResetButton";
 import PrintButton from "./buttons/PrintButton";
 import ToggleEditButton from "./buttons/ToggleEditButton";
-class Navbar extends React.Component {
-  render() {
+function Navbar(props) {
+  
     const printButton = (
       <PrintButton
-        toggleEdit={this.props.toggleEdit}
-        inputMode={this.props.inputMode}
+        toggleEdit={props.toggleEdit}
+        inputMode={props.inputMode}
       />
     );
 
@@ -20,13 +20,13 @@ class Navbar extends React.Component {
         <div>
           <ResetButton />
           <ToggleEditButton
-            toggleEdit={this.props.toggleEdit}
-            inputMode={this.props.inputMode}
+            toggleEdit={props.toggleEdit}
+            inputMode={props.inputMode}
           />
-          {this.props.inputMode ? null : printButton}
+          {props.inputMode ? null : printButton}
         </div>
       </div>
     );
-  }
+  
 }
 export default Navbar;

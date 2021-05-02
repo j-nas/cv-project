@@ -1,16 +1,15 @@
 import React from "react";
 
-class PrintButton extends React.Component {
-  constructor() {
-    super();
-    this.printButton = this.printButton.bind(this);
+
+
+function PrintButton(props) {
+  const clickHandler = (e) => {
+    e.preventDefault()
+    return window.print()
   }
-  printButton() {
-    return window.print();
-  }
-  render() {
-    return <button onClick={this.printButton}>Print/Save PDF</button>;
-  }
+  return (
+    <button onClick={clickHandler}>Print/Save PDF</button>
+  )
 }
 
 export default PrintButton;

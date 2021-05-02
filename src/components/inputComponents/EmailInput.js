@@ -1,23 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 
-class EmailInput extends Component {
-  render() {
-    return (
+
+function EmailInput(props) {
+  return (
+    <div>
       <div>
-        <div>
-          <label htmlFor="emailInput">Email: </label>
-          <input
-            type="email"
-            id="emailInput"
-            placeholder="email@example.com"
-            data-field="email"
-            onChange={this.props.event}
-            value={this.props.email}
-          />
-        </div>
+        <label htmlFor="emailInput">Email: </label> <br/>
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="email@example.com"
+          data-field="email"
+          onChange={props.event}
+          value={props.email}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 export default EmailInput;

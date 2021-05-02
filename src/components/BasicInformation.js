@@ -1,69 +1,66 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import EmailInput from "./inputComponents/EmailInput";
 import TextInput from "./inputComponents/TextInput";
 
-class BasicInformation extends Component {
-  constructor() {
-    super();
-    this.state = {
+function BasicInformation(props) {
+  const [state, setState] = useState(
+    {
       fullName: "",
       email: "",
       phone: "",
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(e) {
+    });
+  
+  function handleChange(e) {
     const value = e.target.value;
-    this.setState({
-      ...this.state,
+    setState({
+      ...state,
       [e.target.dataset.field]: value,
     });
   }
 
-  render() {
-    const editMode = (
-      <div>
-        <h3>Basic Information</h3>
-        <TextInput
-          inputTitle="Name: "
-          dataset="fullName"
-          input={this.state.fullName}
-          event={this.handleChange}
-          placeHolder="Your Name"
-        />
-        <EmailInput email={this.state.email} event={this.handleChange} />
-        <TextInput
-          inputTitle="Phone:"
-          dataset="phone"
-          input={this.state.phone}
-          event={this.handleChange}
-          placeHolder="(555) 555-1234"
-        />
+  const editMode = (
+    <div>
+      <h3>Basic Information</h3>
+      <TextInput
+        inputTitle="Name: "
+        dataset="fullName"
+        input={state.fullName}
+        event={handleChange}
+        placeHolder="Your Name"
+      />
+      <EmailInput email={state.email} event={handleChange} />
+      <TextInput
+        inputTitle="Phone:"
+        dataset="phone"
+        input={state.phone}
+        event={handleChange}
+        placeHolder="(555) 555-1234"
+      />
+      
+    </div>
+  );
+
+  const displayMode = (
+    <div className="splitPane">
+      <div className="leftSide name">
+        <h1>{state.fullName}</h1>
+      </div>
+      <div className="rightSideHeader">
+        
+          <a href={"mailto:" + state.email}>{state.email}</a>
+          <br />
+          {state.phone}
         
       </div>
-    );
-
-    const displayMode = (
-      <div className="splitPane">
-        <div className="leftSide name">
-          <h1>{this.state.fullName}</h1>
-        </div>
-        <div className="rightSideHeader">
-          
-            <a href={"mailto:" + this.state.email}>{this.state.email}</a>
-            <br />
-            {this.state.phone}
-          
-        </div>
-      </div>
-    );
-    return (
-      <div>
-        {this.props.inputMode ? editMode : displayMode}
-        <hr />
-      </div>
-    );
-  }
+    </div>
+  );
+  return (
+    <div>
+      {props.inputMode ? editMode : displayMode}
+      <hr />
+    </div>
+  );
+  
 }
 
 export default BasicInformation;
