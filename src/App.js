@@ -19,7 +19,6 @@ function App() {
       ? setSchoolInputs([...schoolInputs, { key: uniqid() }])
       : setWorkInputs([...workInputs, { key: uniqid() }]);
 
-    console.log(schoolInputs);
   };
   const deleteSection = (e) => {
     e.target.dataset.field === "schoolInputs"

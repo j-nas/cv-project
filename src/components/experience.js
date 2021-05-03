@@ -27,7 +27,7 @@ function Experience(props) {
     setListItems([...listItems, { key: uniqid(), text: "" }]);
   };
   const removeListItem = (e) => {
-    setListItems([...listItems, { key: uniqid(), text: "" }]);
+    setListItems(listItems.filter((item) => item.key !== e.target.id))
   };
 
   const inputMode = (
