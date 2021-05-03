@@ -1,7 +1,6 @@
 import React from "react";
 
 function RelevantSkillsInput(props) {
-  
   const listItemInput = props.listItems.map((item) => {
     return (
       <li key={item.key}>
@@ -11,6 +10,7 @@ function RelevantSkillsInput(props) {
           data-field={item.key}
           onChange={props.onChangeHandler}
           value={item.text}
+          name="listInput"
         />
         <button onClick={props.removeListItem} id={item.key}>
           Remove
@@ -34,6 +34,5 @@ function RelevantSkillsInput(props) {
   );
   const displayMode = <ul>{listItemDisplay}</ul>;
   return <div>{props.inputMode ? inputMode : displayMode}</div>;
-
 }
 export default RelevantSkillsInput;
